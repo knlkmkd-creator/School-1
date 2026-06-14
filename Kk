@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>राजकीय उत्क्रमित मध्य विद्यालय भरथीपुर - आधिकारिक वेबसाइट</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        
+        /* टॉप नोटिस बार - रनिंग टेक्स्ट */
+        .notice-bar {
+            background-color: #dc2626;
+            color: #ffffff;
+            padding: 10px 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .marquee-text {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+        /* मुख्य हेडर तिरंगा थीम */
+        header {
+            background: linear-gradient(135deg, #ff9933 0%, #ffffff 50%, #128807 100%);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 5px solid #002147;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        header h1 {
+            color: #000080;
+            font-size: 2.6rem;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #334155;
+            font-weight: 600;
+        }
+        .udise-tag {
+            display: inline-block;
+            background-color: #002147;
+            color: #ffffff;
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* नेविगेशन बार */
+        nav {
+            background-color: #002147;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ff9933;
+            color: #002147;
+        }
+
+        /* मुख्य कंटेनर */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* वेलकम / हीरो सेक्शन */
+        .hero {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        .hero h2 {
+            color: #002147;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #475569;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+        }
+        .hero-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* ग्रिड लेआउट */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid #ff9933;
+        }
+        .card.green-top {
+            border-top: 5px solid #128807;
+        }
+        .card h3 {
+            color: #002147;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+        .card p {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #128807;
+            margin: 10px 0;
+        }
+        .facility-list {
+            list-style: none;
+        }
+        .facility-list li {
+            padding: 8px 0;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+        }
+        .facility-list li::before {
+            content: "✓";
+            color: #128807;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* शिक्षक अनुभाग */
+        .teachers-section {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 35px;
+        }
+        .teachers-section h2 {
+            color: #002147;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+        .teachers-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+        }
+        .teacher-item {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            font-weight: 500;
+            color: #334155;
+            transition: transform 0.2s;
+        }
+        .teacher-item:hover {
+            transform: translateY(-3px);
+            background-color: #fff7ed;
+            border-color: #ff9933;
+        }
+        .teacher-item.principal {
+            background-color: #eff6ff;
+            border: 2px solid #3b82f6;
+            color: #1e3a8a;
+            font-weight: bold;
+            grid-column: 1 / -1;
+            max-width: 350px;
+            margin: 0 auto 15px auto;
+        }
+
+        /* गैलरी अनुभाग */
+        .gallery {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 35px;
+        }
+        .gallery h2 {
+            color: #002147;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            background: #f8fafc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            padding: 8px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.03);
+        }
+        .gallery-item p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        /* फुटर */
+        footer {
+            background-color: #002147;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- टॉप रनिंग नोटिस बार -->
+<div class="notice-bar">
+    <div class="marquee-text">
+        📢 महत्वपूर्ण सूचना: सत्र 2026-27 के लिए नामांकन प्रारंभ है! जल्दी करें, अपने बच्चों के उज्ज्वल भविष्य के लिए आज ही प्रवेश दिलाएं। 🌟
+    </div>
+</div>
+
+<!-- स्कूल हेडर -->
+<header>
+    <h1>राजकीय उत्क्रमित मध्य विद्यालय भरथीपुर</h1>
+    <p>सकरा, मुजफ्फरपुर, बिहार</p>
+    <div class="udise-tag">UDISE कोड: 10141404201</div>
+</header>
+
+<!-- मुख्य नेविगेशन मेनू -->
+<nav>
+    <a href="#about">होम</a>
+    <a href="#info">विवरण व सुविधाएं</a>
+    <a href="#teachers">हमारे शिक्षक</a>
+    <a href="#gallery">चित्र दीर्घा (Gallery)</a>
+</nav>
+
+<div class="container">
+
+    <!-- होम / स्वागत सेक्शन -->
+    <section id="about" class="hero">
+        <h2>विद्या धनं सर्वधन प्रधानम्</h2>
+        <p>राजकीय उत्क्रमित मध्य विद्यालय भरथीपुर में आपका स्वागत है। हमारा विद्यालय बच्चों के समग्र मानसिक, शारीरिक और बौद्धिक विकास के लिए प्रतिबद्ध है। आधुनिक सुविधाओं और अनुभवी शिक्षकों के साथ हम शिक्षा का एक नया स्तर प्रदान कर रहे हैं।</p>
+        <!-- मुख्य बैनर इमेज के रूप में शिक्षकों की सम्मानित ग्रुप फोटो लगाई गई है -->
+        <img src="1000038098.jpg" alt="विद्यालय भवन और स्टाफ" class="hero-img">
+    </section>
+
+    <!-- विवरण ग्रिड -->
+    <div id="info" class="info-grid">
+        <div class="card">
+            <h3>प्रशासनिक जानकारी</h3>
+            <p><strong>प्रधानाध्यापक:</strong> श्रीमति उषा गुप्ता</p>
+            <p><strong>संकुल (Cluster):</strong> रा. उ. माध्यमिक विद्यालय महमदपुर बनवारी</p>
+            <p><strong>स्थान:</strong> सकरा, मुजफ्फरपुर, बिहार</p>
+            <p><strong>संपर्क सूत्र:</strong> <a href="tel:9939295954" style="color: #dc2626; font-weight: bold; text-decoration: none;">9939295954</a></p>
+        </div>
+
+        <div class="card green-top" style="text-align: center;">
+            <h3>विद्यालय सांख्यिकी</h3>
+            <p>कुल नामांकित विद्यार्थी</p>
+            <div class="stat-number">500</div>
+            <p style="color: #64748b; font-size: 0.95rem;">सत्र 2026-27 प्रगति पर</p>
+        </div>
+
+        <div class="card">
+            <h3>आधुनिक सुविधाएं</h3>
+            <ul class="facility-list">
+                <li><strong>स्मार्ट क्लास (Smart Class):</strong> डिजिटल माध्यम से आधुनिक पढ़ाई।</li>
+                <li><strong>लाइब्रेरी (Library):</strong> ज्ञानवर्धन हेतु पुस्तकों का सुंदर संग्रह।</li>
+                <li><strong>मध्याह्न भोजन (MDM):</strong> पौष्टिक एवं स्वच्छ भोजन व्यवस्था।</li>
+                <li><strong>सुरक्षित शनिवार:</strong> जीवन कौशल और सुरक्षा जागरूकता।</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- शिक्षक अनुभाग -->
+    <section id="teachers" class="teachers-section">
+        <h2>हमारे समर्पित शिक्षक और कर्मचारी</h2>
+        
+        <div class="teachers-list">
+            <div class="teacher-item principal">
+                👑 श्रीमति उषा गुप्ता <br> <span style="font-size: 0.9rem; font-weight: normal; color: #2563eb;">(प्रधानाध्यापिका)</span>
+            </div>
+        </div>
+
+        <div class="teachers-list" style="margin-top: 15px;">
+            <div class="teacher-item">सुनील कुमार</div>
+            <div class="teacher-item">नवीन कुमार सिंह</div>
+            <div class="teacher-item">कुमार ध्रुव</div>
+            <div class="teacher-item">हसरत अली</div>
+            <div class="teacher-item">सविता कुमारी</div>
+            <div class="teacher-item">संगीता कुमारी</div>
+            <div class="teacher-item">निधि</div>
+            <div class="teacher-item">प्रियंका भारती</div>
+            <div class="teacher-item">नूतन निवेदिता</div>
+            <div class="teacher-item">पूनम कुमारी</div>
+            <div class="teacher-item">मोनिका यादव</div>
+            <div class="teacher-item">Km मोनिका</div>
+            <div class="teacher-item">प्रतिभा शुक्ला</div>
+            <div class="teacher-item">मोहिनी कुमारी</div>
+        </div>
+    </section>
+
+    <!-- गैलरी अनुभाग (सभी दी गई मूल तस्वीरों के साथ) -->
+    <section id="gallery" class="gallery">
+        <h2>विद्यालय की गतिविधियां एवं झलकियां</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="1000165791.jpg" alt="उत्सव"><p>रचनात्मक गतिविधियां एवं उत्सव (होली मिलन)</p></div>
+            <div class="gallery-item"><img src="1000052764.jpg" alt="शिक्षक बैठक"><p>महिला शिक्षक एवं स्टाफ बैठक</p></div>
+            <div class="gallery-item"><img src="1000034886.jpg" alt="सुरक्षित शनिवार"><p>सुरक्षित शनिवार - वर्ग 2 की प्रस्तुति</p></div>
+            <div class="gallery-item"><img src="1000004372.jpg" alt="खेलकूद"><p>बाल विकास, पीटी और खेलकूद गतिविधियां</p></div>
+            <div class="gallery-item"><img src="1000002893.jpg" alt="समारोह"><p>अतिथि सत्कार एवं सम्मान समारोह</p></div>
+            <div class="gallery-item"><img src="1000004005.jpg" alt="शिक्षण प्रणाली"><p>सृजनात्मक ब्लैकबोर्ड शिक्षण प्रणाली</p></div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p><strong>राजकीय उत्क्रमित मध्य विद्यालय भरथीपुर</strong></p>
+    <p>सकरा, मुजफ्फरपुर, बिहार | UDISE: 10141404201</p>
+    <p>📞 संपर्क सूत्र: +91 9939295954</p>
+</footer>
+
+</body>
+</html>
